@@ -1,0 +1,63 @@
+{
+	"the_first_play": {
+		"CoolingLeftFrame": "5",
+		"TimeLine": [
+			{
+				"Filter": "Any",
+				"StartFrame": "0",
+				"EndFrame": "15",
+				"Sequence": {
+					"TestWriteToBlackBoard": {},
+					"TestReadBlackBoard": {
+						"Param": "#BB_PI"
+					}
+				}
+			},
+			{
+				"Filter": "Standard",
+				"StartFrame": "0",
+				"EndFrame": "25",
+				"Parallel": {
+					"Sequence": {
+						"MoveForward": [
+							{
+								"Frame": "5",
+								"Speed1": "3",
+								"Speed2": "3"
+							},
+							{
+								"Frame": "15",
+								"Speed1": "1.5",
+								"Speed2": "1.5"
+							}
+						],
+						"PlayAction": {
+							"ActionName": "Standard_Action"
+						}
+					}
+				}
+			},
+			{
+				"Filter": "Perfect",
+				"StartFrame": "0",
+				"EndFrame": "15",
+				"Sequence": {
+					"continueStrategy": "ContinueWhenSucc",
+					"ModifyPlay": {
+						"Key": "NextPlay",
+						"Value": "the_second_play"
+					},
+					"PlayAction": {
+						"ActionName": "Log PlayAcionImmediatly"
+					},
+					"Delay": {
+						"DelayFrame": "5",
+						"PlayAction": {
+							"ActionName": "After 5 Frame ,Play Perfect_Action"
+						}
+					}
+				}
+			}
+		]
+	},
+}
