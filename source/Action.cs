@@ -54,7 +54,7 @@ namespace TimeLineScript
     {
         public override void OnStart()
         {
-            play.GetBB().SetValue("PI", 3.14159565358);
+            play.GetBB().SetValue("PI", 3.14159265358);
         }
     }
     /// <summary>
